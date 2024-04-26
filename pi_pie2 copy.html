@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>The Bakery</title>
+    <link rel="icon" type="image/x-icon" href="background.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+</head>
+
+<body id='body'>
+    <img id ="baking" src ="oven.jpg">
+    <img id="transition" src=".jpeg">
+
+    <div id="titleDiv">
+        <h1 id="gameTitle">
+            The <br>Bakery
+        </h1>
+    </div>
+
+
+    <div id="startDiv">
+        <button id="start" onclick="startGame(); playAudio('music.mp3'); playAudio('pop.mp3')">
+            Click To Play
+        </button>
+    </div>
+
+
+<div style = "margin-left: 1000px; margin-top: 700px; position: fixed;">
+
+<p>DEVELOPER BUTTONS: REMOVE IN FINAL PRODUCT</p>
+
+<button onclick="startGame(); next();" style = "position:fixed">Oven</button>
+<button onclick="startGame(); next(); oventemp =4; next1()" style = "position:fixed; margin-left: 50px;">Liner</button>
+<button onclick=" memVal=3; checkMemGame()" style = "position:fixed; margin-left: 100px;">Dry</button>
+<button onclick=" test(); 
+document.getElementById('flourTextInput').value='2'; 
+document.getElementById('flourUnit').value==2;
+document.getElementById('sugarTextInput').value='3/4';
+ document.getElementById('sugarUnit').value=2;
+ document.getElementById('powderTextInput').value='3/4';
+document.getElementById('powderUnit').value=1; 
+document.getElementById('saltTextInput').value='1/2';
+document.getElementById('powderUnit').value=1;"
+ style = "position:fixed; margin-left: 150px;">Shaky</button>
+
+<button id = "continue2" onclick="test(); " style = "position:fixed; margin-left: 250px;">Continue</button>
+</div>
+    <br>
+
+    
+    <p id='texty'></p>
+
+
+    <button id=continue onclick="next(); ">
+        Continue
+    </button>
+    <button id ='recipebut' onclick="viewrecipe()">View Recipe</button>
+
+
+    <p id="Step1"></p>
+    <p id="Step2"></p>
+    <button id='left' onclick="eggy()">
+        Increase Temperature
+    </button>
+
+    <button id='right' onclick="eggy2()">
+        Decrease Temperature
+    </button>
+
+    <img id="dial">
+
+    <button id=continue1 onclick="next1(); ">Continue</button>
+
+    <button id='lining' onclick="memory()">
+        Start Lining
+    </button>
+
+    <p id = "step3"></p>
+
+    <div id = "gameDry">   
+        <form>
+
+            <div class = "form3" id = "flourMeasure">
+            <img id ="flour" class="dryIngredient">
+            <label for = "flourTextInput">Amount:</label><br>
+            <input type = text id ="flourTextInput" autocomplete="on">
+
+            <select  id = "flourUnit">
+                <option value="0">Select a Unit</option>
+                <option value="1">Teaspoon(s)</option>
+                <option value="2">Cup(s)</option>
+            </select>
+        </div>
+
+        <div class = "form3" id = "sugarMeasure">
+            <img id ="sugar" class="dryIngredient">
+            <label for = "sugarTextInput">Amount:</label><br>
+            <input id = "sugarTextInput" type = text autocomplete="on">
+
+            <select  id = "sugarUnit">
+                <option value="0">Select a Unit</option>
+                <option value="1">Teaspoon(s)</option>
+                <option value="2">Cup(s)</option>
+            </select>
+        </div>
+
+        </form>
+        </div>
+
+        <div id ="gameDryC2">
+
+        <div class = "form3" id = "powderMeasure">
+            <img id ="bakingPowder" class="dryIngredient">
+            <label for = "powderTextInput">Amount:</label><br>
+            <input id = "powderTextInput" type = text autocomplete="on">
+
+
+        <select  id = "powderUnit">
+            
+            <option value="0">Select a Unit</option>
+            <option value="1">Teaspoon(s)</option>
+            <option value="2">Cup(s)</option>
+        </select>
+        </div>
+        
+        <div class = "form3" id = "saltMeasure">
+            <img id ="salt" class="dryIngredient">
+            <label for = "saltTextInput">Amount:</label><br>
+            <input id = "saltTextInput" type = text autocomplete="on ">
+
+            <select  id = "saltUnit">
+                <option value="0">Select a Unit</option>
+                <option value="1">Teaspoon(s)</option>
+                <option value="2">Cup(s)</option>
+            </select>
+        </div>
+        </div>
+
+        <p id = "step4"></p>
+        <div id = "shakyButton">
+        <button class = "shakyButton"id = "please" style="width: 100%; position:fixed;" onmouseover="sift()"></button>
+        <button class = "shakyButton" style ="width: 100%; position:fixed; margin-top: 50px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 150px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 200px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 250px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 300px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 350px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 400px" onmouseover="sift()"></button>
+
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 450px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 500px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 550px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 600px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 650px" onmouseover="sift()"></button>
+        <button class = "shakyButton"style="width: 100%; position:fixed; margin-top: 700px" onmouseover="sift()"></button>
+    </div>
+
+
+    <div id ="gameWet">
+        <p id = "step6">Enter The Amount of These Ingredients! (mL)</p>
+
+        <div class = "form4" id = "milkMeasure">
+            <img src = "milk.jpg" id ="milk" class="wetIngredient">
+            <input id = "milkTextInput" type = text autocomplete="on">
+        </div>
+        
+        <div class = "form5" id = "oilMeasure">
+            <img src = "oil.jpg" id="oil" class="wetIngredient">
+            <input id = "oilTextInput" type = text autocomplete="on ">
+
+        </div>
+
+        </form>
+        <button id = "continue3" onclick="test2(); " style = "position:fixed; margin-left: 600px;">Continue</button>
+    </div>
+
+    
+
+
+
+    <div id = quizzics>
+    <img class = "fake" id ="fake1" onclick="memVal = 1; checkMemGame()">
+    <img class = "fake" id ="fake2" onclick="memVal = 2; checkMemGame()">
+    <img class = "fake" id ="real" onclick="memVal = 3; checkMemGame()">
+    <img class = "fake" id ="fake3" onclick="memVal = 4; checkMemGame()">
+</div>
+
+<p id = "step5"></p>
+<img id ="egg1" src = "egg.jpg" width = 250px; height = 250px;>
+<img id ="egg2" src = "egg.jpg" width = 250px; height = 250px;>
+<button id ="crack1" type ="button" onclick= "crack1()" style="position:fixed">Click To Crack</button>
+<button id ="crack2" onclick="crack2()" >Click </button>
+<form id = "sliders">
+    <p id = "soft1" style="position:fixed;"> Too Soft<br>  (egg won't crack)</p>
+    <input id ="slidy" style ="width:500px; position:fixed;" type = "range" min=0 max=20>
+    <p id = "right1" style="position:fixed;;"> Just Right</p>
+    <p id = "hard1" style="position:fixed;"> Too Hard <br> (egg will spill)</p>
+
+    
+
+    <input id ="slidy2" style =" width:500px; position:fixed; margin-top: 5000px;" type = "range" min=0 max=20>
+    <p id = "right2" style="position:fixed;;"> Just Right</p>
+    <p id = "hard2" style="position:fixed;"> Too Hard <br> (egg will spill)</p>
+    <p id = "soft2" style="position:fixed;"> Too Soft<br>  (egg won't crack)</p>
+</form>
+
+<p id = "step7"> Click on the circles to cut these!</p>
+<img id="knife" src ="knife.jpeg" onclick="stop()">
+
+<p id = "step8"> Stop The Spinner To Cut The Strawberries And Mint! Stop the spinner by clicking the knife.</p>
+<div id = "shakyButton2">
+    <button class = "shakyButton2"id = "please2" style="width: 100%; position:fixed;" onmouseover="mixit()"></button>
+    <button class = "shakyButton2" style ="width: 100%; position:fixed; margin-top: 50px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 150px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 200px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 250px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 300px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 350px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 400px" onmouseover="mixit()"></button>
+
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 450px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 500px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 550px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 600px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 650px" onmouseover="mixit()"></button>
+    <button class = "shakyButton2"style="width: 100%; position:fixed; margin-top: 700px" onmouseover="mixit()"></button>
+</div>
+
+<img id ="battered" src ="line1.jpg">
+<button id ="batterButton" onclick="moreBatter()"></button>
+<p id ="step9"></p>
+
+
+
+
+<button id="ovencloser" onclick="closeoven()"></button>
+<button id="ovenopener" onclick="openoven()"></button>
+<p id ="step10">Close The Oven! (Click the oven door.)</p>
+
+<p id ="bakersWarning"></p>
+
+<img id ="mint2" src="mint1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton6" onclick="chop6()"></button>
+
+<img id ="mint1" src="mint1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton5" onclick="chop5()"></button>
+
+<img id ="berry1" src="berry1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton1" onclick="chop1()"></button>
+
+<img id ="berry2" src="berry1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton2" onclick="chop2()"></button>
+
+
+<img id ="berry3" src="berry1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton3" onclick="chop3()"></button>
+
+<img id ="berry4" src="berry1.jpg" onclick="mistakescore++; playAudio('error.mp3')">
+<button id ="cutbutton4" onclick="chop4()"></button>
+
+<p id ="stepwell">Make a well in the centre by dragging the slider right. Don't drag too fast or you will spill the ingredients!</p>
+<input id ="dragit" style ="width:300px; position:fixed;" type = "range" min=0 max=100 value="0" onmousedown="slowDrag()" onmouseup="testDrag()">
+
+
+
+
+    <div id ="recipe">
+        <button onclick="document.getElementById('recipe').style='margin-top:5000px;'">Close Recipe</button>
+    <p>
+    
+        2 cups flour    <br>
+        3/4 cup sugar    <br>
+        3/4 teaspoon baking powder    <br>
+        1/2 teaspoon salt    <br>
+        2 eggs    <br>
+        3/4 cup milk (180ml)    <br>
+        2/3 cup vegetable oil (160ml)    <br>
+        1 cup strawberries, hulled and chopped - From the Garden if in season    <br>
+        3 tablespoons fresh mint, chopped - From the Garden if in season    <br>
+        </p>
+        <h2>Method:</h2>
+        
+            <p>
+        1. Preheat oven to 200C<br>
+        2. Grease and flour medium muffin cups or line with paper patty tin cups.<br>
+        3. Add sifted flour, sugar, baking powder and salt to a large bowl and make a well in the centre.<br>
+        4. Make an egg mixture by combining egg, oil and milk in a bowl or jug. Mix until combined.<br>
+        5. Add the egg mixture to the well in the dry ingredients and stir until mixed. Do not over-mix or dough will be heavy. Stir in strawberries and mint.<br>
+        6. Pour into muffin cups and bake for 20 to 25 minutes until done. (Hint- Do not turn your oven up to speed up the cooking process - this will make your muffins brown on the outside and uncooked in the middle!)<br>
+        </p>
+    </div>
+
+
+</body>
+
+</html>
+
+<style>
+
+#dragit {
+    margin-top: 5000px;
+    position: fixed;
+    width: 300px;
+}
+#recipe{
+        background-color: white;
+        color: black;
+        font-size: small;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        padding: 10px;
+        height:550px;
+        width:300px;
+        margin-top:5000px;
+        border-radius: 15px;
+        position: fixed;
+    }
+
+#cutbutton6 {
+    cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 640px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #mint1 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 500px;
+
+    }
+
+
+#cutbutton5 {
+    cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 420px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #mint2 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 500px;
+
+    }
+
+    #cutbutton4 {
+    cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 200px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #berry4 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 500px;
+    }
+
+    #cutbutton3 {
+        cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 640px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #berry3 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 100px;
+    }
+
+#cutbutton1 {
+    cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 200px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #berry1 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 100px;
+    }
+    #cutbutton2 {
+        cursor: url("knifec.png"), auto;
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        border-radius: 100%;
+        background-color: transparent;
+        border-color: white;
+        margin-top: 420px;
+        margin-left: 5000px;
+        border-style: solid;
+    }
+
+    #berry2 {
+        width: 300px;
+        height: 200px;
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 100px;
+    }
+
+        #bakersWarning {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        color: black;
+    }
+
+    #step10 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        color: black;
+        margin-top: 5000px;
+    }
+
+    #stepwell {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        margin-top: 5000px;
+        color: black;
+    }
+
+
+    #baking {
+        width: 1100px;
+        height: 700px;
+        position: fixed;
+        margin-left:100px;
+        margin-top: 5000px;
+
+    }
+
+    #ovenopener {
+        position: fixed;
+        width: 400px;
+        margin-left: 500px;
+        margin-top: 5000px;
+        height: 400px;
+        opacity: 0;
+    }
+
+    #ovencloser {
+        position: fixed;
+        width: 450px;
+        margin-left: 520px;
+        margin-top: 5000px;
+        height: 150px;
+        transform: rotate(-6deg);
+        opacity: 0;
+    }
+
+    body {
+        z-index: 1;
+        background:
+            /* top, transparent black, faked with gradient */
+            linear-gradient(rgba(0, 0, 0, 0.7),
+                rgba(0, 0, 0, 0.7)),
+            /* bottom, image */
+            url(background.png);
+
+
+        background-size: 100%;
+        background-color: rgb(142, 153, 158);
+        font-family: "Noto Serif Thai", serif;
+        color: wheat;
+
+
+
+    }
+
+
+    h1 {
+        font-size: 150px;
+
+    }
+
+    a {
+        color: rgb(95, 210, 248);
+    }
+
+    #batterButton {
+        position: fixed;
+        width:80px;
+        height: 80px;
+        margin-left: 815px;
+        opacity: 0;
+        margin-top: 5000px;
+    }
+
+    #gameTitle {
+        position: fixed;
+        transition: 0.5s ease-in-out;
+    }
+
+    #start {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 200px;
+        background-color: rgba(255, 0, 0, 0.262);
+        color: white;
+        border-radius: 25px;
+        font-size: 50px;
+        border-color: wheat;
+        transition: 0.5s ease-in-out;
+
+
+
+
+    }
+
+    #start:hover {
+        background-color: rgba(139, 0, 0, 0.258);
+
+    }
+
+    #startDiv {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 200px;
+    }
+
+
+    #titleDiv {
+
+        float: left;
+        margin: 10%;
+
+
+    }
+
+    #texty {
+        position: fixed;
+        font-size: xx-large;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: left;
+        width: 40%;
+        margin-left: 90px;
+        color: rgba(139, 0, 0, 0);
+        transition: 1s ease-in-out;
+    }
+
+    #continue {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 150px;
+        background-color: rgba(255, 0, 0, 0);
+        color: rgba(255, 255, 255, 0);
+        border-radius: 25px;
+        font-size: 50px;
+        transition: 0.5s ease-in-out;
+        position: fixed;
+        top: 20%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 200px;
+        border-color: rgba(255, 255, 255, 0);
+        border-style: solid;
+    }
+
+    #continue1 {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 150px;
+        background-color: rgb(139, 0, 0);
+        opacity: 0;
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 50px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        top: 80%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 100px;
+        border-style: solid;
+
+    }
+
+    #transition {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    #left {
+        visibility: hidden;
+        position: fixed;
+        margin-top: 100px;
+        border-radius: 25px;
+        font-size: 30px;
+        width: 500px;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+    }
+
+    #left:hover {
+        background-color: grey;
+    }
+
+    #right {
+        visibility: hidden;
+        position: fixed;
+        margin-top: 150px;
+        border-radius: 25px;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+
+    }
+
+    #right:hover {
+        background-color: grey;
+
+    }
+
+    #Step1 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: center;
+        color: black;
+    }
+
+    #step5 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: center;
+        color: black;
+    }
+
+    #step9 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: center;
+        color: wheat;
+    }
+
+    #step6 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-125px);
+        font-size: 50px;
+        text-align: center;
+        color: black;
+    }
+
+    #step7 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        margin-top: 5000px;
+        text-align: left;
+        color: wheat;
+    }
+
+    #step8 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        margin-top: 5000px;
+        text-align: left;
+        color: rgb(0, 0, 0);
+    }
+
+    #Step2 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        color: wheat;
+    }
+
+    #dial {
+        opacity: 0;
+        width: 400px;
+        height: 400px;
+        position: fixed;
+        margin-top: 150px;
+    }
+
+    #recipebut {
+        position: fixed;
+        top: 90%;
+        height: 50px;
+        width: 60px;
+        opacity: 0;
+        background-color: rgb(139, 0, 0);
+        color: white;
+        text-align: center;
+        padding: 5px;
+        border-radius: 15px;
+        border-color: white;
+        border-style: solid;
+
+    }
+
+    #lining {
+        visibility: hidden;
+        position: fixed;
+        margin-top: 100px;
+        border-radius: 25px;
+        font-size: 30px;
+        width: 500px;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+    }
+
+    #lining:hover {
+        background-color: grey;
+    }
+
+    .fake {
+        position: fixed;
+        width: 500px;
+        border-color: wheat;
+        border-style: solid;
+        border-width: 5px;
+    }
+
+    #fake2 {
+        margin-left: 500px;
+        position: fixed;
+    }
+
+    #real {
+        margin-top: 325px;
+        position: fixed;
+    }
+
+
+    #fake1 {
+        position: fixed;
+    }
+    #fake3 {
+        margin-left: 500px;
+        margin-top: 325px;
+        position: fixed;
+    }
+    #quizzics {
+        display: flex;
+        float: left;
+        width: 90vw;
+        height: 90vh;
+        position: fixed;
+        margin-top: 3000px;
+        margin-left: 100px;
+        background-image: (url(tray.jpg));
+    }
+    .dryIngredient {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        transform: translateX(-150px);
+    }
+
+    #gameDry {
+        display: flex;
+        float: left;
+        position: fixed;
+        margin-top: 9000px;
+    }
+
+    #gameDryC2 {
+        display: flex;
+        float: left;
+        margin-left: 500px;
+        position: fixed;
+        margin-top: 9000px;
+    }
+
+
+    #step3 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        color: black;
+    }
+
+    #step4 {
+        position: fixed;
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        transform: translateY(-50px);
+        font-size: 50px;
+        text-align: left;
+        color: black;
+    }
+
+
+    .form3 {
+        position: fixed;
+        margin-left: 165px;
+    }
+
+
+    input {
+        font-family: "DM Serif Display", serif;
+        height: 25px;
+        font-size: 15px;
+        width: 100px;
+        margin-left: 60px;
+        padding-left: 5px;
+        border-radius: 5px;
+        border-width: 2px;
+    }
+    select {
+        height: 50px;
+        border-width: 2px;
+        margin-left: 5px;
+        border-radius: 5px;
+    }
+
+    label {
+        margin-left: 70px;
+         color: black;
+          position: fixed; 
+          transform: translateY(6px);
+    }
+
+    #continue2 {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 150px;
+        background-color: rgb(139, 0, 0);
+        opacity: 0;
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 50px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        top: 80%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 100px;
+        border-style: solid;
+    }
+
+    #continue {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 150px;
+        background-color: rgb(139, 0, 0);
+        opacity: 0;
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 50px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        top: 80%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 100px;
+        border-style: solid;
+    }
+
+    #continue3 {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 400px;
+        height: 150px;
+        background-color: rgb(139, 0, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 50px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        top: 80%;
+        transform: translateY(-50%);
+        right: 0;
+        margin-right: 100px;
+        margin-top: 5000px;
+        border-style: solid;
+    }
+
+    #shakyButton {
+        position: fixed;
+        margin-top: 1000px;
+    }
+
+    #shakyButton2 {
+        position: fixed;
+        margin-top: 1000px;
+    }
+
+    .shakyButton {
+        opacity: 0;
+    }
+
+    .shakyButton2 {
+        opacity: 0;
+    }
+
+    #sliders {
+        margin-top: 5000px;
+        color: black;
+        position: fixed;
+        font-size: 15px;
+        font-style: italic;
+        font-family: "DM Serif Display", serif;
+    }
+
+    #crack1 {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 200px;
+        height: 85px;
+        background-color: rgb(139, 0, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 30px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        border-style: solid;
+        margin-top: 5000px;
+    }
+
+    #crack2 {
+        font-family: "DM Serif Display", serif;
+        font-style: italic;
+        width: 200px;
+        height: 85px;
+        margin-top: 5000px;
+        background-color: rgb(139, 0, 0);
+        color: rgb(255, 255, 255);
+        border-radius: 25px;
+        font-size: 30px;
+        transition: 0.5s ease-in-out;
+        transition: opacity 0.5s;
+        position: fixed;
+        border-style: solid;
+    }
+
+    #egg1 {
+        position: fixed;
+        margin-left: 850px;
+        margin-top: 5000px;
+    }
+
+    #egg2 {
+        position: fixed;
+        margin-left: 850px;
+        margin-top: 5000px;
+    }
+
+    .wetIngredient {
+        width: 300px;
+        height: 300px;
+    }
+
+    #milkMeasure {
+        position: fixed;
+
+    }
+
+    #oilMeasure {
+        position: fixed;
+        margin-top: 350px;
+    }
+
+    #gameWet{
+        position: fixed;
+        margin-top: 5000px;
+        margin-left: 50px;
+    }
+
+    #oilTextInput {
+        transform: translateY(-160px);
+    }
+
+    #milkTextInput {
+        transform: translateY(-160px);
+    }
+
+    #knife {
+        margin-top: 350vh;
+        margin-left:35vw;
+        position: fixed;
+        width:250px;
+        opacity: 1;
+        height:250px;
+        border-radius: 100%;
+        transform: rotate(45deg);
+        
+    }
+
+    #battered {
+        width:900px;
+        height:600px;
+        margin-top: 5000px;
+        margin-left: 200px;
+        position: fixed;
+    }
+
+    
+
+</style>
+
+<script>
+    var crackpass=0;
+            var eggincreasevalue2=1;
+    var eggcrackvalue2 = 0;
+        var eggincreasevalue=1;
+    var eggcrackvalue = 0;
+    var ogre = 0;
+    var oventemp = 1;
+    var mistakescore = 0;
+    var memVal = 0;
+    var cupMeasure=0;
+    var cupMeasure1=0;
+    var spinValue=0;
+    var cutValue=0;
+    var mixval=0;
+    var batterVal=0;
+
+    var bakeVal=0;
+
+    var berry1Val=0;
+    var berry2Val=0;
+    var berry3Val=0;    
+    var berry4Val=0;
+    var mint2Val=0;
+
+    var mint1Val=0;
+
+    var allCut=0;
+    var timeWell =0;
+
+
+    let audioElement;
+
+    function playAudio(url) {
+        audioElement = new Audio(url);
+        audioElement.play();
+    }
+
+
+
+    function startGame() {
+        document.getElementById("start").remove()
+        document.getElementById("texty").innerHTML = "This game helps you to get familiar with the recipe for strawberry and mint muffins in Year 8 Food Technology. If you have not yet read the recipe, it can be accessed at the bottom of the screen at any time. You need to know the recipe to play the game, so please have a look.";
+
+        document.getElementById("texty").style = "color: wheat;";
+        document.getElementById("recipebut").style = "opacity: 1;";
+        document.getElementById("titleDiv").remove();
+        document.getElementById("continue").style = "opacity:1; color: white; background-color: rgba(139, 0, 0, 0.258); top: 50%; border-color: rgba(255, 255, 255, 255)";
+
+
+    }
+
+
+
+
+
+
+    function next() {
+
+        document.getElementById("texty").remove()
+        document.getElementById("continue").remove()
+        document.getElementById("body").style = "background-image: url(untitled.png); background-size: 120%";
+
+
+        setTimeout(function () {
+            document.getElementById("body").style = "background-image: url(markings.jpeg); background-size: 1150px; background-repeat: no-repeat;";
+
+            document.getElementById("left").style = "visibility: visible; font-size: 30px; width: 400px;";
+            document.getElementById("right").style = "visibility: visible; font-size: 30px; width: 400px;";
+            document.getElementById("Step1").innerHTML = "Step 1. Preheat the Oven To The Correct Temperature!";
+            document.getElementById("continue1").style = "opacity: 1;";
+            document.getElementById("dial").src = "dial1.png";
+            document.getElementById("dial").style = "margin-left:350px;opacity:1;transform:rotate(10deg);";
+
+        }, 1000);
+
+
+
+
+    }
+
+
+
+    function eggy() {
+
+        oventemp++;
+        playAudio('click.mp3')
+        if (oventemp == 2) {
+            document.getElementById("dial").style = "transform: rotate(60deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 3) {
+            document.getElementById("dial").style = "transform: rotate(122deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 4) {
+            document.getElementById("dial").style = "transform: rotate(170deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 5) {
+            document.getElementById("dial").style = "transform: rotate(230deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 6) {
+            oventemp--;
+        }
+    }
+
+    function eggy2() {
+        oventemp--;
+        playAudio('click.mp3')
+        if (oventemp == 1) {
+            document.getElementById("dial").style = "transform: rotate(10deg);margin-left:350px;opacity:1;"
+        }
+        if (oventemp == 2) {
+            document.getElementById("dial").style = "transform: rotate(60deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 3) {
+            document.getElementById("dial").style = "transform: rotate(122deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 4) {
+            document.getElementById("dial").style = "transform: rotate(170deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 5) {
+            document.getElementById("dial").style = "transform: rotate(230deg);margin-left:350px;opacity:1;"
+        }
+
+        if (oventemp == 0) {
+            oventemp++;
+        }
+    }
+
+    function next1() {
+        if (oventemp == 4) {
+            document.getElementById("continue1").innerHTML = "You Got It!"
+            document.getElementById("continue1").style = "background-color:lime; opacity:1;"
+            playAudio("correct.mp3")
+
+
+
+        document.getElementById("dial").remove()
+        document.getElementById("continue1").remove()
+        document.getElementById("left").remove()
+        document.getElementById("right").remove()
+        document.getElementById("Step1").remove()
+
+
+            document.getElementById("body").style = "background-image: url(bench.jpg);";
+            
+
+            document.getElementById("body").style = "background-image: url(tray.jpg);";
+            document.getElementById("Step2").innerHTML = "Step 2. Line the Muffin Tray By Memorising The Pattern!";
+            document.getElementById("lining").style = "visibility: visible;";
+
+        }
+        else {
+            document.getElementById("continue1").innerHTML = "Read The Recipe To Find The Temperature!"
+            document.getElementById("continue1").style = "font-size:30px; opacity: 1;"
+            playAudio("error.mp3")
+            mistakescore++;
+        }
+
+
+    }
+
+    function memory() {
+        document.getElementById("Step2").innerHTML = "Memorise The Pattern of The Muffin Liners!<br>5";
+        document.getElementById("body").style = "background-image: url(traylined.jpg);";
+        document.getElementById("lining").style="margin-top:3000px"
+
+        setTimeout(function () {
+            document.getElementById("Step2").innerHTML = "Memorise The Pattern of The Muffin Liners!<br>4";
+        }, 1000);
+
+        setTimeout(function () {
+            document.getElementById("Step2").innerHTML = "Memorise The Pattern of The Muffin Liners!<br>3";
+        }, 2000);
+
+        setTimeout(function () {
+            document.getElementById("Step2").innerHTML = "Memorise The Pattern of The Muffin Liners!<br>2";
+        }, 3000);
+
+        setTimeout(function () {
+            document.getElementById("Step2").innerHTML = "Memorise The Pattern of The Muffin Liners!<br>1";
+        }, 4000);
+
+        setTimeout(function () {
+            document.getElementById("Step2").innerHTML = "Click On The Correct Pattern.";
+            document.getElementById("body").style = "background-image: url(tray.jpg);";
+            document.getElementById("quizzics").style ="margin-top: 100px;"
+            document.getElementById("fake1").src = "fakelined1.jpg"
+            document.getElementById("fake2").src = "fakelined2.jpg"
+            document.getElementById("real").src = "traylined.jpg"
+            document.getElementById("fake3").src = "fakelined3.jpg"
+        }, 5000);
+    }
+
+    function checkMemGame() {
+    if (memVal == 3) {
+        playAudio("correct.mp3")
+        document.getElementById("Step2").innerHTML="You got it!";
+        document.getElementById("Step2").style="color:lime;";
+        document.getElementById("Step2").remove();
+        document.getElementById("fake1").remove();
+        document.getElementById("fake2").remove();
+        document.getElementById("real").remove();
+        document.getElementById("fake3").remove();
+        document.getElementById("quizzics").remove();
+
+
+        setTimeout(function () {
+            document.getElementById("body").style = "background-image: url(emptybench.jpg);";
+
+
+        
+        document.getElementById("flour").src="flour.png";
+        document.getElementById("sugar").src="sugar.jpg";
+        document.getElementById("salt").src="salt.jpg";
+        document.getElementById("bakingPowder").src="bpowder.jpg";
+        
+        document.getElementById("flourMeasure").style="margin-top:90px;";
+        document.getElementById("sugarMeasure").style="margin-top:300px";
+        document.getElementById("saltMeasure").style="margin-top:90px";
+        document.getElementById("powderMeasure").style="margin-top:300px; ";
+
+        document.getElementById("gameDry").style="margin-top:80px"
+        document.getElementById("gameDryC2").style="margin-top:80px"
+        document.getElementById("continue2").style="opacity: 100%;"
+
+
+
+        document.getElementById("step3").innerHTML="Step 3. Enter the quantity and unit of all dry ingredients!"
+        }, 500);
+
+
+        
+
+    }
+    else {
+        playAudio("error.mp3")
+        mistakescore ++;
+        document.getElementById("Step2").innerHTML = "Wrong Pattern!";
+        document.getElementById("Step2").style = "color:red";
+
+
+
+
+            document.getElementById("fake1").style = "border-color:red"
+            document.getElementById("fake2").style = "border-color:red"
+            document.getElementById("real").style = "border-color:red"
+            document.getElementById("fake3").style = "border-color:red"
+
+        
+        setTimeout(function () {
+            document.getElementById("fake1").style = "border-color:wheat"
+            document.getElementById("fake2").style = "border-color:wheat"
+            document.getElementById("real").style = "border-color:wheat"
+            document.getElementById("fake3").style = "border-color:wheat"
+        }, 100);
+
+                
+        setTimeout(function () {
+            document.getElementById("fake1").style = "border-color:red"
+            document.getElementById("fake2").style = "border-color:red"
+            document.getElementById("real").style = "border-color:red"
+            document.getElementById("fake3").style = "border-color:red"
+        }, 200);
+
+        setTimeout(function () {
+            document.getElementById("fake1").style = "border-color:wheat"
+            document.getElementById("fake2").style = "border-color:wheat"
+            document.getElementById("real").style = "border-color:wheat"
+            document.getElementById("fake3").style = "border-color:wheat"
+        }, 300);
+
+                
+        setTimeout(function () {
+            document.getElementById("fake1").style = "border-color:red"
+            document.getElementById("fake2").style = "border-color:red"
+            document.getElementById("real").style = "border-color:red"
+            document.getElementById("fake3").style = "border-color:red"
+        }, 400);
+
+        setTimeout(function () {
+            document.getElementById("fake1").style = "border-color:wheat"
+            document.getElementById("fake2").style = "border-color:wheat"
+            document.getElementById("real").style = "border-color:wheat"
+            document.getElementById("fake3").style = "border-color:wheat"
+            document.getElementById("quizzics").style ="margin-top: 3000px;"
+            memory();
+            document.getElementById("Step2").style = "color:wheat";
+        }, 500);
+
+
+        }
+    }
+
+    function test() {
+        if (document.getElementById("flourTextInput").value=="2" && document.getElementById("flourUnit").value=="2" 
+        && document.getElementById("sugarTextInput").value=="3/4" && document.getElementById("sugarUnit").value=="2"
+        && document.getElementById("powderTextInput").value=="3/4" && document.getElementById("powderUnit").value=="1"
+        && document.getElementById("saltTextInput").value=="1/2" && document.getElementById("powderUnit").value=="1") {
+
+            document.getElementById("step3").innerHTML = "You Got it!";
+            playAudio("correct.mp3");
+
+            document.getElementById("gameDry").remove()
+            document.getElementById("gameDryC2").remove()
+            document.getElementById("step3").remove()
+            document.getElementById("continue2").remove()
+            document.getElementById("shakyButton").style = "margin:0;"
+            ogre =0;
+            document.getElementById("step4").innerHTML = "Shake Your Cursor to Sift the Flour!"
+            document.getElementById("body").style = "background-image: url(sift1.jpg);";
+        }
+        else {
+            mistakescore++;
+            document.getElementById("step3").innerHTML = "Try Again!";
+            playAudio("error.mp3");
+        }
+
+    }
+
+    function sift() {
+        ogre++
+        document.getElementById("please").innerHTML =ogre;
+        
+
+        if (ogre >= 10 && ogre<=80) {
+            document.getElementById("step4").innerHTML = "Keep Going!"
+            setTimeout(function () {
+                document.getElementById("step4").style = "color:red;"
+            }, 100);
+            setTimeout(function () {
+                document.getElementById("step4").style = "color:;"
+            }, 200);
+        }
+
+        if (ogre == 20) {
+            document.getElementById("body").style = "background-image: url(sift2.jpg);";
+        }
+
+        if (ogre == 40) {
+            document.getElementById("body").style = "background-image: url(sift3.jpg);";
+        }
+        
+        if (ogre == 60) {
+            document.getElementById("body").style = "background-image: url(sift4.jpg);";
+        }
+
+        if (ogre == 80) {
+            document.getElementById("body").style = "background-image: url(sift5.jpg);";
+            document.getElementById("step4").innerHTML = "You Got It!";
+            playAudio("correct.mp3");
+            setTimeout (function() {
+                document.getElementById("step4").remove();
+                wellIt()
+
+
+            }, 1000)
+        }
+    }
+
+    function sliderfunc() {
+        document.getElementById("slidy").value=eggcrackvalue;
+        eggcrackvalue+= eggincreasevalue;
+        setTimeout(function () {
+             sliderfunc()
+        }, 50);
+
+        if (eggcrackvalue==20) {
+            eggincreasevalue= -1;
+        }
+
+        if (eggcrackvalue==0) {
+            eggincreasevalue= 1;
+        }
+        
+
+    }
+
+    function sliderfunc2() {
+        document.getElementById("slidy2").value=eggcrackvalue2;
+        eggcrackvalue2+= eggincreasevalue2;
+        setTimeout(function () {
+             sliderfunc2()
+        }, 35);
+
+        if (eggcrackvalue2==20) {
+            eggincreasevalue2= -1;
+        }
+
+        if (eggcrackvalue2==0) {
+            eggincreasevalue2= 1;
+        }
+        
+
+    }
+
+    function crack1() {
+        if (eggcrackvalue>=8 && eggcrackvalue<=13) {
+            document.getElementById("egg1").src="eggcracked.jpg"
+            eggincreasevalue=0;
+            if (crackpass==0){
+                crackpass=1;
+                document.getElementById("crack1").innerHTML="You Got It!";
+                playAudio("crack.mp3")
+            }
+            else {
+                playAudio("crack.mp3")
+                document.getElementById("crack2").innerHTML="You Got It!";
+
+
+                    document.getElementById("egg2").remove();
+                document.getElementById("egg1").remove();
+                document.getElementById("step5").remove();
+                document.getElementById("crack2").remove();
+                document.getElementById("crack1").remove();
+                document.getElementById("slidy").remove();
+                document.getElementById("slidy2").remove();
+                document.getElementById("soft1").remove();
+                document.getElementById("right1").remove();
+                document.getElementById("hard1").remove();
+                document.getElementById("soft2").remove();
+                document.getElementById("right2").remove();
+                document.getElementById("hard2").remove();
+
+
+                    document.getElementById("gameWet").style="margin-top:50px"
+                    document.getElementById("continue3").style="margin-top:0px"
+
+            }
+    }
+        if (eggcrackvalue>=14){
+            playAudio("error.mp3")
+            document.getElementById("egg1").src="eggspill.jpg"
+            document.getElementById("crack1").innerHTML="Whoops!";
+            mistakescore++
+            setTimeout(function () {
+                document.getElementById("egg1").src="egg.jpg"
+                document.getElementById("crack1").innerHTML="Click to Crack";
+        }, 1000);
+    }
+        if (eggcrackvalue<=7) {
+            playAudio("error.mp3")
+            document.getElementById("crack1").innerHTML="Whoops!";
+            setTimeout(function () {
+                document.getElementById("crack1").innerHTML="Click to Crack";
+        }, 1000);
+        mistakescore++
+        }
+}
+
+function crack2() {
+        if (eggcrackvalue2>=8 && eggcrackvalue2<=13) {
+            document.getElementById("egg2").src="eggcracked.jpg"
+            eggincreasevalue2=0;
+            if (crackpass==0){
+                crackpass=1;
+                document.getElementById("crack2").innerHTML="You Got It!";
+                playAudio("crack.mp3")
+            }
+            else {
+                playAudio("crack.mp3")
+                document.getElementById("crack2").innerHTML="You Got It!";
+
+                    document.getElementById("egg2").remove();
+                document.getElementById("egg1").remove();
+                document.getElementById("step5").remove();
+                document.getElementById("crack2").remove();
+                document.getElementById("crack1").remove();
+                document.getElementById("slidy").remove();
+                document.getElementById("slidy2").remove();
+                document.getElementById("soft1").remove();
+                document.getElementById("right1").remove();
+                document.getElementById("hard1").remove();
+                document.getElementById("soft2").remove();
+                document.getElementById("right2").remove();
+                document.getElementById("hard2").remove();
+                    document.getElementById("gameWet").style="margin-top:50px"
+                    document.getElementById("continue3").style="margin-top:0px"
+            }
+        }
+        if (eggcrackvalue2>=14){
+            mistakescore++
+            playAudio("error.mp3")
+            document.getElementById("egg2").src="eggspill.jpg"
+            document.getElementById("crack2").innerHTML="Whoops!";
+            setTimeout(function () {
+                document.getElementById("egg2").src="egg.jpg"
+                document.getElementById("crack2").innerHTML="Click to Crack";
+        }, 1000);
+    }
+        if (eggcrackvalue2<=7) {
+            mistakescore++
+            playAudio("error.mp3")
+            document.getElementById("crack2").innerHTML="Whoops!";
+            setTimeout(function () {
+                document.getElementById("crack2").innerHTML="Click to Crack";
+        }, 1000);
+        }
+}
+
+function test2() {
+    if (document.getElementById("milkTextInput").value=="180" && document.getElementById("oilTextInput").value=="160") {
+        document.getElementById("continue3").remove()
+        document.getElementById("gameWet").remove()
+        document.getElementById("body").style="background-image: url(emptybench.jpg); background-size: 90%; cursor: url('knifec.png'), auto;"
+        document.getElementById("step7").style="margin-top:50px;";
+        playAudio("correct.mp3")
+        spin()
+        
+    }
+
+    else {
+        document.getElementById("step6").innerHTML="Try Again!"
+        mistakescore++
+        playAudio("error.mp3")
+    }
+}
+
+function spin() {
+    document.getElementById("berry1").style="margin-top:100px;";
+    document.getElementById("berry4").style="margin-top:100px;";
+    document.getElementById("mint1").style="margin-top:320px;";
+    document.getElementById("berry2").style="margin-top:320px;";
+    document.getElementById("mint2").style="margin-top:540px;";
+    document.getElementById("berry3").style="margin-top:540px;";
+
+    document.getElementById("cutbutton1").style="margin-left:350px;";
+    document.getElementById("cutbutton2").style="margin-left:350px;";
+    document.getElementById("cutbutton3").style="margin-left:350px;";
+    document.getElementById("cutbutton4").style="margin-left:750px;";
+    document.getElementById("cutbutton5").style="margin-left:750px;";
+    document.getElementById("cutbutton6").style="margin-left:750px;";
+
+    
+}
+
+function stop() {
+    if (spinValue ==1) {
+
+        if (cutValue==0) {
+            playAudio('knife.mp3')
+            document.getElementById("body").style="background-image: url(spinnermintcut.jpg); background-size: 90%;";
+            cutValue=1
+        }
+
+        if (cutValue==2) {
+            playAudio('knife.mp3')
+            document.getElementById("body").style="background-image: url(cutboth.jpg); background-size: 90%;";
+            cutValue=3
+            mix()
+        }
+
+
+    }
+    if (spinValue ==2) {
+        mistakescore++
+        playAudio('error.mp3')
+    }
+
+    if (spinValue ==3) {
+
+        if (cutValue==0) {
+            playAudio('knife.mp3')
+            document.getElementById("body").style="background-image: url(spinnerberrycut.jpg); background-size: 90%;";
+            cutValue=2
+        }
+
+        if (cutValue==1) {
+            playAudio('knife.mp3')
+            document.getElementById("body").style="background-image: url(cutboth.jpg); background-size: 90%;";
+            cutValue=3
+            mix()
+        }
+    }
+
+    if (spinValue ==4) {
+        playAudio('error.mp3')
+        mistakescore++
+    }
+}
+
+    function mix() {
+        document.getElementById("knife").remove()
+        document.getElementById("step7").remove()
+        document.getElementById("body").style="background-image:url(mix1.jpg); background-size:95%;";
+        document.getElementById("shakyButton2").style="margin-top:0px"
+        document.getElementById("step8").innerHTML = "Shake Your Cursor to Mix The Ingredients!"
+        document.getElementById("step8").style="margin-top:50px"
+        document.getElementById("berry1").remove()
+        document.getElementById("berry2").remove()
+        document.getElementById("berry3").remove()
+        document.getElementById("berry4").remove()
+        document.getElementById("mint1").remove()
+        document.getElementById("mint2").remove()
+        playAudio("correct.mp3")
+        
+
+    }
+
+    function mixit() {
+        mixval++
+        
+
+        if (mixval >= 10 && mixval<=120) {
+            document.getElementById("step8").innerHTML = "Keep Going!"
+            setTimeout(function () {
+                document.getElementById("step8").style = "color:red;margin-top:50px;"
+            }, 100);
+            setTimeout(function () {
+                document.getElementById("step8").style = "color:;margin-top:50px;"
+            }, 200);
+        }
+
+        if (mixval == 10) {
+            document.getElementById("body").style = "background-image: url(mix2.jpg);background-size:95%;";
+        }
+
+        if (mixval == 20) {
+            document.getElementById("body").style = "background-image: url(mix3.jpg);background-size:95%;";
+        }
+        
+        if (mixval == 30) {
+            document.getElementById("body").style = "background-image: url(mix4.jpg);background-size:95%;";
+        }
+
+        if (mixval == 40) {
+            document.getElementById("body").style = "background-image: url(mix5.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 50) {
+            document.getElementById("body").style = "background-image: url(mix6.jpg);background-size:95%;";
+
+        }
+
+
+        if (mixval == 60) {
+            document.getElementById("body").style = "background-image: url(mix7.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 70) {
+            document.getElementById("body").style = "background-image: url(mix8.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 80) {
+            document.getElementById("body").style = "background-image: url(mix9.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 90) {
+            document.getElementById("body").style = "background-image: url(mix8.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 100) {
+            document.getElementById("body").style = "background-image: url(mix9.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 110) {
+            document.getElementById("body").style = "background-image: url(mix8.jpg);background-size:95%;";
+
+        }
+
+        if (mixval == 120) {
+            document.getElementById("body").style = "background-image: url(mix9.jpg);background-size:95%;";
+            playAudio("correct.mp3")
+            document.getElementById("step8").innerHTML = "You Got It!"
+
+                document.getElementById("step8").remove()
+                document.getElementById("body").style = "background-color:rgb(79,79,79); background-image: url(null)";
+                document.getElementById("battered").style = "margin-top:100px; margin-left:200px";
+                document.getElementById("step9").innerHTML="Fill the muffin tray with batter. Click the liners in the right order!"
+                document.getElementById("batterButton").style = "margin-top:505px; opacity:0px";
+
+
+        }
+
+
+        }
+
+    function moreBatter() {
+
+        if (batterVal==11) {
+            batterVal++;
+            document.getElementById("battered").src = "line13.jpg";
+            document.getElementById("batterButton").remove();
+            playAudio('squish.mp3')
+
+
+            document.getElementById("battered").remove()
+            document.getElementById("body").style = " background-image: url(emptybench.jpg)";
+            document.getElementById("baking").style = "margin-top:100px";
+            document.getElementById("ovencloser").style = "margin-top:600px";
+            document.getElementById("step10").style="margin-top: 50px"
+
+            document.getElementById("step9").remove()
+
+
+
+
+
+        }
+
+        if (batterVal==10) {
+            batterVal++;
+            document.getElementById("battered").src = "line12.jpg";
+            document.getElementById("batterButton").style = "margin-top:200px; margin-left:380px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==9) {
+            batterVal++;
+            document.getElementById("battered").src = "line11.jpg";
+            document.getElementById("batterButton").style = "margin-top:350px; margin-left:380px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==8) {
+            batterVal++;
+            document.getElementById("battered").src = "line10.jpg";
+            document.getElementById("batterButton").style = "margin-top:505px; margin-left:525px";
+            playAudio('squish.mp3')
+        }
+
+
+        if (batterVal==7) {
+            batterVal++;
+            document.getElementById("battered").src = "line9.jpg";
+            document.getElementById("batterButton").style = "margin-top:200px; margin-left:525px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==6) {
+            batterVal++;
+            document.getElementById("battered").src = "line8.jpg";
+            document.getElementById("batterButton").style = "margin-top:200px; margin-left:815px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==5) {
+            batterVal++;
+            document.getElementById("battered").src = "line7.jpg";
+            document.getElementById("batterButton").style = "margin-top:350px; margin-left:670px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==4) {
+            batterVal++;
+            document.getElementById("battered").src = "line6.jpg";
+            document.getElementById("batterButton").style = "margin-top:505px; margin-left:380px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==3) {
+            batterVal++;
+            document.getElementById("battered").src = "line5.jpg";
+            document.getElementById("batterButton").style = "margin-top:505px; margin-left:670px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==2) {
+            batterVal++;
+            document.getElementById("battered").src = "line4.jpg";
+            document.getElementById("batterButton").style = "margin-top:350px; margin-left:815px";
+            playAudio('squish.mp3')
+        }
+        if (batterVal==1) {
+            batterVal++;
+            document.getElementById("battered").src = "line3.jpg";
+            document.getElementById("batterButton").style = "margin-top:200px; margin-left:670px";
+            playAudio('squish.mp3')
+        }
+
+        if (batterVal==0) {
+            batterVal++;
+            document.getElementById("battered").src = "line2.jpg";
+            document.getElementById("batterButton").style = "margin-top:350px; margin-left:525px";
+            playAudio('squish.mp3')
+        }
+    }
+
+    function closeoven() {
+        document.getElementById("baking").src="ovenclosed.jpg"
+        document.getElementById("ovencloser").style="margin-top:5000px"
+        document.getElementById("ovenopener").style="margin-top: 270px;"
+        document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 1 Minute"
+
+
+        setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 2 Minutes"
+
+          }, 1000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 3 Minutes"
+
+          }, 2000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 4 Minutes"
+
+          }, 3000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 5 Minutes"
+
+          }, 4000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 6 Minutes"
+
+          }, 5000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 7 Minutes"
+
+          }, 6000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 8 Minutes"
+
+          }, 7000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 9 Minutes"
+
+          }, 8000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 10 Minutes"
+
+          }, 9000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 11 Minutes"
+
+          }, 10000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 12 Minutes"
+
+          }, 11000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 13 Minutes"
+
+          }, 12000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 14 Minutes"
+
+          }, 13000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 15 Minutes"
+
+          }, 14000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 16 Minutes"
+
+          }, 15000);
+
+
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 17 Minutes"
+
+          }, 16000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 18 Minutes"
+
+          }, 17000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 19 Minutes"
+
+          }, 18000);
+
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 20 Minutes"
+            bakeVal=1;
+          }, 19000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 21 Minutes"
+
+          }, 20000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 22 Minutes"
+
+          }, 21000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 23 Minutes"
+
+          }, 22000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 24 Minutes"
+
+          }, 23000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven When The Time Is Up! <br> 25 Minutes"
+
+          }, 24000);
+
+          setTimeout(function () {
+            document.getElementById("step10").innerHTML="Open The Oven!!!"
+            bakeVal=2;
+
+          }, 25000);
+    }
+
+    function openoven() {
+        if (bakeVal==1){
+            document.getElementById("baking").src="cooked.jpg"
+            document.getElementById("bakersWarning").innerHTML ="You Did It!"
+            document.getElementById("step10").style="margin-top:5000px"
+
+
+            setTimeout(function () {
+                document.getElementById("body").style = "background-image: url(muffinsdone.jpg);";
+                document.getElementById("baking").remove()
+                document.getElementById("bakersWarning").innerHTML="You have finished the recipe!!"
+          }, 2000);
+
+            setTimeout(function () {
+                endgame()
+          }, 4000);
+            
+        }
+
+        if(bakeVal==0) {
+            document.getElementById("step10").style="margin-top:5000px"
+            document.getElementById("bakersWarning").innerHTML ="Undercooked!"
+            mistakescore++
+            document.getElementById("baking").src="oven.jpg"
+
+            setTimeout(function () {
+                document.getElementById("step10").style="margin-top:50px"
+                document.getElementById("bakersWarning").innerHTML =""
+                document.getElementById("baking").src="ovenclosed.jpg"
+
+          }, 1000);
+        }
+
+        if(bakeVal==2) {
+            document.getElementById("step10").style="margin-top:5000px"
+            document.getElementById("bakersWarning").innerHTML ="Burnt!"
+            document.getElementById("baking").src="burnt.jpg"
+            mistakescore++
+
+            setTimeout(function () {
+                document.getElementById("bakersWarning").innerHTML ="Try Again!"
+
+          }, 1000);
+
+            setTimeout(function () {
+                document.getElementById("step10").style="margin-top: 50px"
+                document.getElementById("bakersWarning").innerHTML =""
+                document.getElementById("baking").src="ovenclosed.jpg"
+                closeoven()
+
+          }, 3000);
+        }
+
+    }
+
+    function viewrecipe(){
+        document.getElementById("recipe").style="margin-top:100px;color:black";
+    }
+
+    function chop1() {
+
+        if (berry1Val==5) {
+            document.getElementById("cutbutton1").remove()
+            document.getElementById("berry1").src="berry7.jpg"
+        playAudio("knife.mp3")
+        allCut++
+        berry1Val++
+        if (allCut==6) {
+            mix()
+        }
+
+        if (allCut==6) {
+            mix()
+        }
+        }
+
+        if (berry1Val==4) {
+            document.getElementById("berry1").src="berry6.jpg"
+            document.getElementById("cutbutton1").style="margin-left: 100px;"
+        playAudio("knife.mp3")
+        berry1Val++
+        }
+
+        if (berry1Val==3) {
+            document.getElementById("berry1").src="berry5.jpg"
+            document.getElementById("cutbutton1").style="margin-left: 150px;"
+        playAudio("knife.mp3")
+        berry1Val++
+        }
+
+        if (berry1Val==2) {
+            document.getElementById("berry1").src="berry4.jpg"
+            document.getElementById("cutbutton1").style="margin-left: 200px;"
+        playAudio("knife.mp3")
+        berry1Val++
+        }
+
+        if (berry1Val==1) {
+            document.getElementById("berry1").src="berry3.jpg"
+            document.getElementById("cutbutton1").style="margin-left: 250px;"
+        playAudio("knife.mp3")
+        berry1Val++
+        }
+        if (berry1Val==0) {
+            document.getElementById("berry1").src="berry2.jpg"
+            document.getElementById("cutbutton1").style="margin-left: 300px;"
+        playAudio("knife.mp3")
+        berry1Val++
+        }
+
+
+
+    }
+
+    function chop2() {
+
+if (berry2Val==5) {
+    document.getElementById("cutbutton2").remove()
+    document.getElementById("berry2").src="berry7.jpg"
+playAudio("knife.mp3")
+allCut++
+berry2Val++
+if (allCut==6) {
+            mix()
+        }
+}
+
+if (berry2Val==4) {
+    document.getElementById("berry2").src="berry6.jpg"
+    document.getElementById("cutbutton2").style="margin-left: 100px;"
+playAudio("knife.mp3")
+berry2Val++
+}
+
+if (berry2Val==3) {
+    document.getElementById("berry2").src="berry5.jpg"
+    document.getElementById("cutbutton2").style="margin-left: 150px;"
+playAudio("knife.mp3")
+berry2Val++
+}
+
+if (berry2Val==2) {
+    document.getElementById("berry2").src="berry4.jpg"
+    document.getElementById("cutbutton2").style="margin-left: 200px;"
+playAudio("knife.mp3")
+berry2Val++
+}
+
+if (berry2Val==1) {
+    document.getElementById("berry2").src="berry3.jpg"
+    document.getElementById("cutbutton2").style="margin-left: 250px;"
+playAudio("knife.mp3")
+berry2Val++
+}
+if (berry2Val==0) {
+    document.getElementById("berry2").src="berry2.jpg"
+    document.getElementById("cutbutton2").style="margin-left: 300px;"
+playAudio("knife.mp3")
+berry2Val++
+}
+
+
+
+
+
+
+}
+
+
+function chop3() {
+
+if (berry3Val==5) {
+    document.getElementById("cutbutton3").remove()
+    document.getElementById("berry3").src="berry7.jpg"
+playAudio("knife.mp3")
+allCut++
+berry3Val++
+if (allCut==6) {
+            mix()
+        }
+}
+
+if (berry3Val==4) {
+    document.getElementById("berry3").src="berry6.jpg"
+    document.getElementById("cutbutton3").style="margin-left: 100px;"
+playAudio("knife.mp3")
+berry3Val++
+}
+
+if (berry3Val==3) {
+    document.getElementById("berry3").src="berry5.jpg"
+    document.getElementById("cutbutton3").style="margin-left: 150px;"
+playAudio("knife.mp3")
+berry3Val++
+}
+
+if (berry3Val==2) {
+    document.getElementById("berry3").src="berry4.jpg"
+    document.getElementById("cutbutton3").style="margin-left: 200px;"
+playAudio("knife.mp3")
+berry3Val++
+}
+
+if (berry3Val==1) {
+    document.getElementById("berry3").src="berry3.jpg"
+    document.getElementById("cutbutton3").style="margin-left: 250px;"
+playAudio("knife.mp3")
+berry3Val++
+}
+if (berry3Val==0) {
+    document.getElementById("berry3").src="berry2.jpg"
+    document.getElementById("cutbutton3").style="margin-left: 300px;"
+playAudio("knife.mp3")
+berry3Val++
+}
+}
+
+function chop4() {
+
+if (berry4Val==5) {
+    document.getElementById("cutbutton4").remove()
+    document.getElementById("berry4").src="berry7.jpg"
+playAudio("knife.mp3")
+allCut++
+berry4Val++
+if (allCut==6) {
+            mix()
+        }
+}
+
+if (berry4Val==4) {
+    document.getElementById("berry4").src="berry6.jpg"
+    document.getElementById("cutbutton4").style="margin-left: 500px;"
+playAudio("knife.mp3")
+berry4Val++
+}
+
+if (berry4Val==3) {
+    document.getElementById("berry4").src="berry5.jpg"
+    document.getElementById("cutbutton4").style="margin-left: 550px;"
+playAudio("knife.mp3")
+berry4Val++
+}
+
+if (berry4Val==2) {
+    document.getElementById("berry4").src="berry4.jpg"
+    document.getElementById("cutbutton4").style="margin-left: 600px;"
+playAudio("knife.mp3")
+berry4Val++
+}
+
+if (berry4Val==1) {
+    document.getElementById("berry4").src="berry3.jpg"
+    document.getElementById("cutbutton4").style="margin-left: 650px;"
+playAudio("knife.mp3")
+berry4Val++
+}
+if (berry4Val==0) {
+    document.getElementById("berry4").src="berry2.jpg"
+    document.getElementById("cutbutton4").style="margin-left: 700px;"
+playAudio("knife.mp3")
+berry4Val++
+}
+}
+
+
+function chop5() {
+
+if (mint1Val==5) {
+    document.getElementById("cutbutton5").remove()
+    document.getElementById("mint1").src="mint7.jpg"
+playAudio("knife.mp3")
+mint1Val++
+allCut++
+
+
+if (allCut==6) {
+            mix()
+        }
+}
+
+if (mint1Val==4) {
+    document.getElementById("mint1").src="mint6.jpg"
+    document.getElementById("cutbutton5").style="margin-left: 500px;"
+playAudio("knife.mp3")
+mint1Val++
+}
+
+if (mint1Val==3) {
+    document.getElementById("mint1").src="mint5.jpg"
+    document.getElementById("cutbutton5").style="margin-left: 550px;"
+playAudio("knife.mp3")
+mint1Val++
+}
+
+if (mint1Val==2) {
+    document.getElementById("mint1").src="mint4.jpg"
+    document.getElementById("cutbutton5").style="margin-left: 600px;"
+playAudio("knife.mp3")
+mint1Val++
+}
+
+if (mint1Val==1) {
+    document.getElementById("mint1").src="mint3.jpg"
+    document.getElementById("cutbutton5").style="margin-left: 650px;"
+playAudio("knife.mp3")
+mint1Val++
+}
+if (mint1Val==0) {
+    document.getElementById("mint1").src="mint2.jpg"
+    document.getElementById("cutbutton5").style="margin-left: 700px;"
+playAudio("knife.mp3")
+mint1Val++
+}
+}
+
+function chop6() {
+
+
+
+if (mint2Val==5) {
+    document.getElementById("cutbutton6").remove()
+    document.getElementById("mint2").src="mint7.jpg"
+playAudio("knife.mp3")
+mint2Val++
+allCut++
+
+if (allCut==6) {
+            mix()
+        }
+}
+
+if (mint2Val==4) {
+    document.getElementById("mint2").src="mint6.jpg"
+    document.getElementById("cutbutton6").style="margin-left: 500px;"
+playAudio("knife.mp3")
+mint2Val++
+}
+
+if (mint2Val==3) {
+    document.getElementById("mint2").src="mint5.jpg"
+    document.getElementById("cutbutton6").style="margin-left: 550px;"
+playAudio("knife.mp3")
+mint2Val++
+}
+
+if (mint2Val==2) {
+    document.getElementById("mint2").src="mint4.jpg"
+    document.getElementById("cutbutton6").style="margin-left: 600px;"
+playAudio("knife.mp3")
+mint2Val++
+}
+
+if (mint2Val==1) {
+    document.getElementById("mint2").src="mint3.jpg"
+    document.getElementById("cutbutton6").style="margin-left: 650px;"
+playAudio("knife.mp3")
+mint2Val++
+}
+if (mint2Val==0) {
+    document.getElementById("mint2").src="mint2.jpg"
+    document.getElementById("cutbutton6").style="margin-left: 700px;"
+playAudio("knife.mp3")
+mint2Val++
+}
+}
+
+function endgame() {
+    playAudio('yay.mp3')
+    
+    if (mistakescore==0) {
+        document.getElementById("body").style = "background-image: url(3star.jpg);";
+        document.getElementById("bakersWarning").innerHTML="You Got 3 Stars! Way to Go!"
+
+    }
+
+    if (mistakescore<=5 && mistakescore != 0) {
+        document.getElementById("body").style = "background-image: url(2star.jpg);";
+        document.getElementById("bakersWarning").innerHTML="You Got 2 Stars! You made " + mistakescore + " mistakes. See if you can try again to get 3 stars!"
+
+    }
+
+
+    if (mistakescore>=6) {
+        document.getElementById("body").style = "background-image: url(1star.jpg);";
+        document.getElementById("bakersWarning").innerHTML="You Got 1 Star! You made " + mistakescore + " mistakes. See if you can try again to get a higher score!"
+
+    }
+}
+
+function slowDrag() {
+        setTimeout(function () {
+        
+        timeWell=1;
+
+      }, 2000); 
+}
+
+function testDrag() {
+    if (document.getElementById('dragit').value==100& timeWell==1) {
+        playAudio('correct.mp3')
+        document.getElementById("body").style = "background-image: url(yeswell.jpg);";
+
+        setTimeout(function () {
+            document.getElementById("dragit").remove();
+            document.getElementById("stepwell").remove();
+            document.getElementById("body").style = "background-image: url(emptybench.jpg);";
+                document.getElementById("sliders").style = "margin-top: 200px; margin-left:60px";
+                document.getElementById("soft1").style =" position:fixed; margin-left:50px; margin-top: 30px";
+                document.getElementById("soft2").style =" position:fixed; margin-left:50px; margin-top: 370px";
+                document.getElementById("right1").style =" position:fixed; margin-left:300px; margin-top: 30px";
+                document.getElementById("hard1").style =" position:fixed; margin-left:600px; margin-top: 30px"
+                document.getElementById("right2").style =" position:fixed; margin-left:300px; margin-top: 370px";
+                document.getElementById("hard2").style =" position:fixed; margin-left:600px; margin-top: 370px"
+                document.getElementById("slidy").style=" width:500px; margin-left:100px; position:fixed;";
+                document.getElementById("crack1").style =" position:fixed; margin-left:300px; margin-top: 250px"
+                document.getElementById("egg1").style ="margin-top: 100px"
+                document.getElementById("egg2").style ="margin-top: 470px"
+                document.getElementById("crack2").style =" position:fixed; margin-left:300px; margin-top: 600px"
+                document.getElementById("slidy2").style = " width:500px; height: 100px; position:fixed; margin-top: 300px; margin-left:100px";
+                document.getElementById("step5").innerHTML = "Crack the Eggs Just Right!";
+        sliderfunc()
+
+        sliderfunc2()
+
+      }, 1000); 
+
+
+
+    }
+
+    else if (document.getElementById('dragit').value==100 & timeWell==0) {
+        playAudio('error.mp3')
+        document.getElementById('dragit').value=0
+        timeWell=0;
+    }
+
+    else {
+        document.getElementById('dragit').value=0
+        timeWell=0;
+    }
+    
+    
+}
+
+function wellIt() {
+    document.getElementById("dragit").style="margin-top:700px"
+    document.getElementById("stepwell").style="margin-top:50px"
+    document.getElementById("body").style="background-image:url('nowell.jpg')"
+}
+</script>

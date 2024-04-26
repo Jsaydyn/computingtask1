@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id ="login">
+    <h1 id ="heading">Access "The Bakery" on the LaSalle Techwork</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form>
+        <label for="user">Email:</label>
+        <br>
+        <input id ="user" type ="text" autocomplete="nope">
+
+        <br>
+        <br>
+
+        <label for="pass">Password:</label>
+        <br>
+        <input id ="pass" type ="password" autocomplete="nope">
+
+        <br>
+        <p id = "incorrect"></p>
+        <button type = "button" onclick = "login()" id ="click">submit</button>
+
+    </form>
+</div>
+</body>
+</html>
+
+<style>
+    #heading {
+        text-align: center;
+    }
+    form {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 70px;
+
+    }
+
+    input {
+        width: 60%;
+        height: 30px;
+        border-radius: 50px;
+        padding: 5px;
+        border-style: solid;
+        border-color: lightgreen;
+
+    }
+
+    #click {
+        width: 20%;
+        height:20px;
+        margin-top: 10px;
+    }
+
+
+
+
+    #login {
+        padding: 50px;
+        position: fixed;
+        background-color: seagreen;
+        width: 400px;
+        height: 100vh;
+        color: white;
+        border-color: white;
+        border-width: 5px;
+        border-style: solid;
+        transform: translateY(-20px) translatex(-20px);
+
+    }
+
+    button {
+        border-color: lightgreen;
+        border-radius: 25px;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        border-style: solid;
+
+    }
+
+    body{
+        background-image: url("https://static1.squarespace.com/static/5fc622a2bd14ff0dd2c031e6/6014209e8e880629aa1ddf10/6014209f8e880629aa1ddf15/1616696414180/Quote+De+La+Salle+school+-+iconograph+46+cropped.jpg?format=1500w");
+    }
+
+
+</style>
+
+<script>
+    function login() {
+        if (document.getElementById("user").value == "year8stu@techwork.net" && document.getElementById("pass").value == "lasallebankstown" ) {
+            location.replace("https://jsaydyn.github.io/ctetask1")
+        }
+
+        else if (document.getElementById("user").value == "year9stu@techwork.net" && document.getElementById("pass").value == "lasallebankstown" ) {
+            alert("This is a Year 8 game. You can not access this game.")
+        }
+
+        else {
+            document.getElementById("incorrect").innerHTML="Incorrect email or password."
+        }
+    }
+</script>
